@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/components/app-sidebar"
+import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,17 +6,16 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
-import {
-  Chart
-} from "@/components/chart"
+import { Chart } from "@/components/chart";
+import { Textbox } from "@/components/textbox";
 
 export default function Page() {
   return (
@@ -30,28 +29,59 @@ export default function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
+                  <BreadcrumbLink href="#">Models</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                  <BreadcrumbPage>Insert Model Name</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <Chart/>
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
+        <div className="grid grid-cols-4 gap-4 p-4 pt-0">
+          <div className="grid gap-4 overflow-auto max-sm:col-span-4">
+            <Textbox
+              title={"Useful Textbox 1"}
+              description={"description"}
+              content1={"content1"}
+              content2={"content2"}
+            />
           </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+          <div className="grid col-span-2 gap-4 overflow-auto max-sm:col-span-4">
+            <Chart
+              chartName={"Insert Name of Graph"}
+              dates={"Insert Time Period"}
+              content1={"content1"}
+              content2={"content2"}
+            />
+          </div>
+          <div className="grid gap-4 overflow-auto max-sm:col-span-4">
+            <Textbox
+              title={"Useful Textbox 2"}
+              description={"description"}
+              content1={"content1"}
+              content2={"content2"}
+            />
+          </div>
+        </div>
+        <div className="grid gap-4 p-10 pb-5">
+          <Textbox
+            title={"Explanation of the Graph"}
+            description={"This is how we can get rich quick"}
+            content1={"content1"}
+            content2={"content2"}
+          />
+        </div>
+        <div className="grid gap-4 p-10 pt-5">
+          <Textbox
+            title={"Code Used"}
+            description={"This is how we implemented it!"}
+            content1={"content1"}
+            content2={"content2"}
+          />
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }
