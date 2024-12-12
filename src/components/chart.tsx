@@ -33,7 +33,14 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function Chart(props: any) {
+type ChartType = {
+  chartName: string;
+  dates: string;
+  content1: string;
+  content2: string;
+};
+
+export function Chart(props: ChartType) {
   return (
     <Card>
       <CardHeader>
